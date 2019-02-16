@@ -1,4 +1,4 @@
-package toolsqa.drivers;
+package com.toolsqa.drivers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
