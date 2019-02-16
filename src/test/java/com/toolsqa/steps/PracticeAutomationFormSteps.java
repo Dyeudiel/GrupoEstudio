@@ -1,4 +1,4 @@
-package toolsqa.steps;
+package com.toolsqa.steps;
 
 public class PracticeAutomationFormSteps {
 
