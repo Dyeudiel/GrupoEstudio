@@ -1,6 +1,6 @@
 package com.toolsqa.steps;
 
-import static
+import cucumber.api.java.Before;
 
 public class CommonSteps {
 
@@ -10,8 +10,6 @@ public class CommonSteps {
 		
 	}
 	
-	@Given
 	
-	@After
 	
 }
