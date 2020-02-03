@@ -11,33 +11,57 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MiDriver {
 
+//	private static List<MiDriver> listWebDriver = new ArrayList<>();
+//	private WebDriver driver;
+//
+//	@SuppressWarnings({ "unchecked", "rawtypes" })
+//	public static MiDriver withChrome() {
+//
+//		ChromeOptions chromeOptions = new ChromeOptions();
+//		HashMap<String, Object> chromePrefs = new HashMap();
+//		chromePrefs.put("download.default_directory", "");
+//		chromeOptions.addArguments("--start-Minimize");
+//		chromeOptions.setExperimentalOption("prefs", chromePrefs);
+//
+//		listWebDriver.add(new MiDriver());
+//		listWebDriver.get(listWebDriver.size() - 1).driver = new ChromeDriver(chromeOptions);
+//		listWebDriver.get(listWebDriver.size() - 1).driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//		return listWebDriver.get(listWebDriver.size() - 1);
+//	}
+//
+//	public WebDriver enLaURL(String url) {
+//		driver.get(url);
+//		return listWebDriver.get(listWebDriver.size() - 1).driver;
+//	}
+	
+	
 	private WebDriver driver;
 
-	private static List<MiDriver> listMiDriver = new ArrayList<>();
+	private static List<MiDriver> listWebDriver = new ArrayList<>();
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static MiDriver withBrowser() {
+	public static MiDriver withChrome() {
 		String downloadPath = "";
-		int timeOut = 20;
 		ChromeOptions chromeOptions = new ChromeOptions();
 		HashMap<String, Object> chromePrefs = new HashMap();
 		chromePrefs.put("download.default_directory", downloadPath);
-		chromeOptions.addArguments("--start-maximized --ignore-certificate-errors --disable-infobars --incognito");
+		chromeOptions.addArguments("--start-Minimize");
 		chromeOptions.setExperimentalOption("prefs", chromePrefs);
 
-		listMiDriver.add(new MiDriver());
-		listMiDriver.get(listMiDriver.size() - 1).driver = new ChromeDriver(chromeOptions);
-		listMiDriver.get(listMiDriver.size() - 1).driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
-		return listMiDriver.get(listMiDriver.size() - 1);
+		listWebDriver.add(new MiDriver());
+		listWebDriver.get(listWebDriver.size() - 1).driver = new ChromeDriver(chromeOptions);
+		listWebDriver.get(listWebDriver.size() - 1).driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		return listWebDriver.get(listWebDriver.size() - 1);
 
 	}
 
-	public WebDriver setURL(String url) {
+	public WebDriver enLaURL(String url) {
 		driver.get(url);
-		return listMiDriver.get(listMiDriver.size() - 1).driver;
+		return listWebDriver.get(listWebDriver.size() - 1).driver;
 	}
 
 	public static WebDriver getBrowser() {
-		return listMiDriver.get(listMiDriver.size() - 1).driver;
+		return listWebDriver.get(listWebDriver.size() - 1).driver;
 	}
+
 }
